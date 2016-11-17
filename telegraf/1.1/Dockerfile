@@ -11,7 +11,8 @@ RUN wget -q https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERS
     dpkg -i telegraf_${TELEGRAF_VERSION}_amd64.deb && \
     rm -f telegraf_${TELEGRAF_VERSION}_amd64.deb*
 
-RUN wget -q -O /usr/local/bin/mo https://raw.githubusercontent.com/tests-always-included/mo/master/mo && \
+RUN wget -q https://raw.githubusercontent.com/tests-always-included/mo/master/mo
+RUN  mv mo /usr/local/bin &&\
     chmod +x /usr/bin/mo
 
 EXPOSE 8125/udp 8092/udp 8094

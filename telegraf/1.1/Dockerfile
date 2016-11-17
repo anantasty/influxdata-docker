@@ -13,7 +13,7 @@ RUN wget -q https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERS
 
 RUN wget -q https://raw.githubusercontent.com/tests-always-included/mo/master/mo
 RUN  mv mo /usr/local/bin &&\
-    chmod +x /usr/bin/mo
+    chmod +x /usr/local/bin/mo
 
 EXPOSE 8125/udp 8092/udp 8094
 

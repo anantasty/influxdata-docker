@@ -11,6 +11,9 @@ RUN wget -q https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERS
     dpkg -i telegraf_${TELEGRAF_VERSION}_amd64.deb && \
     rm -f telegraf_${TELEGRAF_VERSION}_amd64.deb*
 
+RUN wget -q -O /usr/local/bin/mo https://raw.githubusercontent.com/tests-always-included/mo/master/mo && \
+    chmod +x /usr/bin/mo
+
 EXPOSE 8125/udp 8092/udp 8094
 
 COPY entrypoint.sh /entrypoint.sh
